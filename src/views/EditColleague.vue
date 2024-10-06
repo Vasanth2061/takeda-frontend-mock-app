@@ -11,6 +11,10 @@
         <textarea v-model="colleague.description" id="description" required class="form-control mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
       </div>
       <div class="form-group">
+        <label for="isTeamMember" class="block text-sm font-medium text-gray-700">Is Team Member:</label>
+        <input type="checkbox" v-model="colleague.isTeamMember" id="isTeamMember" class="form-control mt-1 block">
+      </div>
+      <div class="form-group">
         <label for="image" class="block text-sm font-medium text-gray-700">Image:</label>
         <input type="file" @change="onFileChange" id="image" class="form-control mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
       </div>
@@ -31,6 +35,7 @@ export default {
         colleagueName: '',
         description: '',
         imageURL: '',
+        isTeamMember: false,
       },
       file: null,
     };
@@ -56,6 +61,7 @@ export default {
       const formData = new FormData();
       formData.append('colleagueName', this.colleague.colleagueName);
       formData.append('description', this.colleague.description);
+      formData.append('isTeamMember', this.colleague.isTeamMember);
       if (this.file) {
         formData.append('file', this.file);
       }

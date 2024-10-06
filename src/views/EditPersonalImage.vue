@@ -35,7 +35,7 @@ export default {
 
       try {
         await axios.put(`${API_URL}api/PersonalImages/${this.personalImageId}`, formData);
-        this.$router.push('/members');
+        this.$router.push('/');
       } catch (error) {
         console.error('Error updating personal image:', error);
       }

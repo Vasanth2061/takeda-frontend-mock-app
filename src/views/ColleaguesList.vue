@@ -67,56 +67,72 @@ export default {
 
 <style scoped>
 .carousel-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 1rem;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    padding-bottom: 1rem;
 }
+
 .carousel {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
+    width: max-content; /* Ensure the width is based on content */
 }
+
 .card {
-  display: inline-block;
-  width: 400px; /* Increased width */
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 16px;
-  border-radius: 8px;
+    display: inline-block;
+    width: 400px; /* Adjust width as needed */
+    border: 1px solid #ccc;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    word-wrap: break-word; /* Ensure long words break and wrap */
+    word-break: break-word; /* Break long words */
+    overflow: hidden; /* Hide overflow content */
 }
+
 .team-member-image {
-  width: 100%;
-  height: 200px; /* Fixed height */
-  object-fit: contain; /* Ensure the full image is visible without cropping */
+    width: 100%;
+    height: 200px; /* Fixed height */
+    object-fit: contain; /* Ensure the full image is visible without cropping */
 }
+
 .actions {
-  display: flex;
-  gap: 8px;
-  justify-content: center; /* Center the buttons */
+    display: flex;
+    gap: 8px;
+    justify-content: center; /* Center the buttons */
 }
+
 .btn {
-  padding: 8px 16px;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
 }
+
 .btn-view {
-  background-color: #28a745; /* Green */
+    background-color: #28a745; /* Green */
 }
+
 .btn-view:hover {
-  background-color: #218838;
+    background-color: #218838;
 }
+
 .btn-edit {
-  background-color: #ffc107; /* Yellow */
+    background-color: #ffc107; /* Yellow */
 }
+
 .btn-edit:hover {
-  background-color: #e0a800;
+    background-color: #e0a800;
 }
+
 .btn-delete {
-  background-color: #dc3545; /* Red */
+    background-color: #dc3545; /* Red */
 }
+
 .btn-delete:hover {
-  background-color: #c82333;
+    background-color: #c82333;
 }
+
 </style>

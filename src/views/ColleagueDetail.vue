@@ -4,7 +4,7 @@
     <div v-if="colleague" class="space-y-4">
       <h2 class="text-xl font-semibold">{{ colleague.colleagueName }}</h2>
       <p class="text-gray-700">{{ colleague.description }}</p>
-      <img :src="`https://localhost:7019/${colleague.imageURL}`" alt="Colleague Image" v-if="colleague.imageURL" class="w-full h-auto rounded-md shadow-md">
+      <img :src="`https://localhost:7019/${colleague.imageURL}`" alt="Colleague Image" v-if="colleague.imageURL" class="colleague-image rounded-md shadow-md">
     </div>
   </div>
 </template>
@@ -38,5 +38,10 @@ export default {
 </script>
 
 <style scoped>
-/* Add your styles here */
+.colleague-image {
+  width: 100%; /* Full width */
+  max-width: 400px; /* Maximum width */
+  height: 300px; /* Fixed height */
+  object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
 </style>
