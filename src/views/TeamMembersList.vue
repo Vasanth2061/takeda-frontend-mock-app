@@ -8,8 +8,8 @@
       <div class="carousel">
         <div v-for="member in teamMembers" :key="member.id" class="card bg-white shadow-md rounded-lg p-4 mb-4">
           <h2 class="text-xl font-semibold">{{ member.colleagueName }}</h2>
-          <p class="text-gray-700">{{ member.description }}</p>
-          <img :src="`https://localhost:7019/${member.imageURL}`" alt="Team Member Image" v-if="member.imageURL" class="team-member-image rounded-md shadow-md mt-2 mb-4">
+          <p class="text-gray-700 description">{{ member.description }}</p>
+          <img :src="`https://localhost:7019/${member.imageURL}`" alt="Team Member Image" v-if="member.imageURL" class="circular-image shadow-md mt-2 mb-4">
           <div class="actions flex gap-4 mt-4 justify-center">
             <router-link :to="`/team-members/${member.id}`" class="btn btn-view">
               <i class="fas fa-eye mr-2"></i>
@@ -88,10 +88,18 @@ export default {
     overflow: hidden; /* Hide overflow content */
 }
 
-.team-member-image {
-    width: 100%;
-    height: 200px; /* Fixed height */
+.circular-image {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
     object-fit: contain; /* Ensure the full image is visible without cropping */
+    border-radius: 50%; /* Make the image circular */
+    margin: 0 auto; /* Center the image */
+}
+
+.description {
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .actions {
@@ -132,5 +140,4 @@ export default {
 .btn-delete:hover {
     background-color: #c82333;
 }
-
 </style>

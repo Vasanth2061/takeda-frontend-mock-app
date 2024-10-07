@@ -9,8 +9,8 @@
         <div v-for="colleague in colleagues" :key="colleague.id" class="card bg-white shadow-md rounded-lg p-4 mb-4 flex flex-col justify-between">
           <div>
             <h2 class="text-xl font-semibold">{{ colleague.colleagueName }}</h2>
-            <p class="text-gray-700">{{ colleague.description }}</p>
-            <img :src="`https://localhost:7019/${colleague.imageURL}`" alt="Colleague Image" v-if="colleague.imageURL" class="w-full h-48 object-contain rounded-md shadow-md mt-2 mb-4">
+            <p class="text-gray-700 description">{{ colleague.description }}</p>
+            <img :src="`https://localhost:7019/${colleague.imageURL}`" alt="Colleague Image" v-if="colleague.imageURL" class="circular-image shadow-md mt-2 mb-4">
           </div>
           <div class="actions flex gap-4 mt-4 justify-center">
             <router-link :to="`/colleagues/${colleague.id}`" class="btn btn-view">
@@ -90,10 +90,18 @@ export default {
     overflow: hidden; /* Hide overflow content */
 }
 
-.team-member-image {
-    width: 100%;
-    height: 200px; /* Fixed height */
+.circular-image {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
     object-fit: contain; /* Ensure the full image is visible without cropping */
+    border-radius: 50%; /* Make the image circular */
+    margin: 0 auto; /* Center the image */
+}
+
+.description {
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .actions {
@@ -134,5 +142,4 @@ export default {
 .btn-delete:hover {
     background-color: #c82333;
 }
-
 </style>

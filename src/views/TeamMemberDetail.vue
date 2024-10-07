@@ -41,7 +41,7 @@ export default {
 .team-member-image {
   width: 100%;
   max-width: 400px; /* Maximum width */
-  height: 300px; /* Fixed height */
-  object-fit: cover; /* Maintain aspect ratio and cover the area */
+  height: auto; /* Adjust height to maintain aspect ratio */
+  object-fit: contain; /* Ensure the full image is visible without cropping */
 }
 </style>

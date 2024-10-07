@@ -4,7 +4,7 @@
     <router-link to="/training-activities/add" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">
       <i class="fas fa-plus mr-2"></i>Add Training Activity
     </router-link>
-    <div class="card bg-white shadow-md rounded-lg p-4 mb-4" v-for="activity in activities" :key="activity.id">
+    <div class="card bg-white shadow-md rounded-lg p-4 mb-4 border border-black" v-for="activity in activities" :key="activity.id">
       <h2 class="text-xl font-semibold">{{ activity.name }}</h2>
       <p class="text-gray-700">{{ activity.description }}</p>
       <p class="text-gray-600">Start Date: {{ activity.startDate }}</p>

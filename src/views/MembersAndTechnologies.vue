@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">Members, Technologies, and Hobbies</h1>
+    <h1 class="text-2xl font-bold mb-4">Personal Information</h1>
     <router-link to="/members/add" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">
       <i class="fas fa-plus mr-2"></i>Add Member
     </router-link>
