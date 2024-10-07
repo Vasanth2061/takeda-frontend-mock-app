@@ -62,7 +62,3 @@
     },
   };
   </script>
-  
-  <style scoped>
-  /* Tailwind CSS classes are used directly in the template */
-  </style>

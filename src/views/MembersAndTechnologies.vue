@@ -8,27 +8,27 @@
       <table class="w-full">
         <tbody>
           <tr>
-            <td class="font-semibold">Name</td>
+            <td class="font-semibold field-name">Name:</td>
             <td>{{ member.name }}</td>
           </tr>
           <tr>
-            <td class="font-semibold">Date of Birth</td>
+            <td class="font-semibold field-name">Date of Birth:</td>
             <td>{{ member.dateOfBirth }}</td>
           </tr>
           <tr>
-            <td class="font-semibold">Phone Number</td>
+            <td class="font-semibold field-name">Phone Number:</td>
             <td>{{ member.phoneNumber }}</td>
           </tr>
           <tr>
-            <td class="font-semibold">Address</td>
+            <td class="font-semibold field-name">Address:</td>
             <td>{{ member.streetAddress }}, {{ member.city }}, {{ member.state }}, {{ member.pinCode }}</td>
           </tr>
           <tr>
-            <td class="font-semibold">Background</td>
+            <td class="font-semibold field-name">Background:</td>
             <td>{{ member.backGround }}</td>
           </tr>
           <tr>
-            <td class="font-semibold">University Education</td>
+            <td class="font-semibold field-name">University Education:</td>
             <td>{{ member.univEducation }}</td>
           </tr>
         </tbody>
@@ -83,21 +83,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="tech in technologies" :key="tech.id">
-            <td class="p-4">{{ tech.name }}</td>
-            <td class="p-4"><span v-html="generateStars(tech.proficiency)"></span></td>
-            <td class="p-4">
-              <div class="actions flex gap-4 justify-center">
-                <router-link :to="`/technologies/edit/${tech.id}`" class="btn bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                  <i class="fas fa-pencil-alt mr-2"></i>
-                </router-link>
-                <button @click="deleteTechnology(tech.id)" class="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                  <i class="fas fa-trash mr-2"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
+        <tr v-for="tech in technologies" :key="tech.id" class="table-row">
+          <td class="p-4 border">{{ tech.name }}</td>
+          <td class="p-4 border profiency"><span v-html="generateStars(tech.proficiency)"></span></td>
+          <td class="p-4 border action1">
+            <div class="actions flex gap-4 justify-center">
+              <router-link :to="`/technologies/edit/${tech.id}`" class="btn bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                <i class="fas fa-pencil-alt mr-2"></i>
+              </router-link>
+              <button @click="deleteTechnology(tech.id)" class="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                <i class="fas fa-trash mr-2"></i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
       </table>
     </div>
 
@@ -115,21 +115,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="hobby in hobbies" :key="hobby.id">
-            <td class="p-4">{{ hobby.name }}</td>
-            <td class="p-4">{{ hobby.description }}</td>
-            <td class="p-4">
-              <div class="actions flex gap-4 justify-center">
-                <router-link :to="`/hobbies/edit/${hobby.id}`" class="btn bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                  <i class="fas fa-pencil-alt mr-2"></i>
-                </router-link>
-                <button @click="deleteHobby(hobby.id)" class="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                  <i class="fas fa-trash mr-2"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
+            <tr v-for="hobby in hobbies" :key="hobby.id" class="table-row">
+              <td class="p-4 border">{{ hobby.name }}</td>
+              <td class="p-4 border description-column">{{ hobby.description }}</td>
+              <td class="p-4 border actions-column">
+                <div class="actions flex gap-4 justify-center">
+                  <router-link :to="`/hobbies/edit/${hobby.id}`" class="btn bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                    <i class="fas fa-pencil-alt mr-2"></i>
+                  </router-link>
+                  <button @click="deleteHobby(hobby.id)" class="btn bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    <i class="fas fa-trash mr-2"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
       </table>
     </div>
   </div>
@@ -287,5 +287,23 @@ export default {
 }
 .carousel-button.next {
   right: 0;
+}
+.field-name {
+  padding-right: 1rem; /* Adjust padding as needed */
+  white-space: nowrap; /* Prevent line breaks */
+}
+.description-column {
+  width: 40%; /* Decrease width for the description column */
+}
+
+.actions-column {
+  width: 30%; /* Increase width for the actions column */
+}
+.profiency {
+  width: 40%; /* Decrease width for the description column */
+}
+
+.action1 {
+  width: 30%; /* Increase width for the actions column */
 }
 </style>
